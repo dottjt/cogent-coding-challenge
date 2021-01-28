@@ -20,7 +20,10 @@ In the root directory run:
 ## Running
 
 To run the application, please enter:
-  - `npm start`
+  - `npm start` with relevant arguments
+
+Here are some examples:
+  - `npm start ./images`
 
 To run the tests, please enter:
   - `npm test`
@@ -59,6 +62,7 @@ Here's a working model of how the application will function (this model will evo
   - Does a folder name share the same part of another folder name?
   - Does a folder share the same part of another image file name?
   - Does an image share the same contents of another image?
+
 
 - There will be an array which will be mutated throughout the course of the checks which items have already been iterated?
 - Do I also want a huge matrix which has accounted for all possibilities? Might be beyond the scope of this application.
