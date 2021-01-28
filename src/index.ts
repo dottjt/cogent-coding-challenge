@@ -1,5 +1,3 @@
-(async () => {
-  // Step 0:
+import { main } from './main';
 
-  return process.exit(0);
-})();
+main(process.argv);

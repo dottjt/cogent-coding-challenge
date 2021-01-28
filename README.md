@@ -34,7 +34,9 @@ To run the tests, please enter:
 
 ## Initial Assumptions
 
--
+- INSTRUCTION: `finds files which have exactly the same contents` - I assume by "contents", the brief is referring to the actual image itself, not file name.
+- The only way to correctly prove if two images are the same is to check if two images have the same contents.
+- There are some potential hacks which might be able to find a match faster, based on things like similar file names etc.
 
 ## Future Improvements
 
@@ -42,6 +44,26 @@ To run the tests, please enter:
 
 ## Process
 
-Here's how I went about this coding exercise:
+Here's how I went about this coding exercise.
 
-### Step 1
+- Create initial codebase.
+- Figure out which libraries I need to use + initial assumptions + application logic
+  - `fs` - file
+  - `file-type` - checks if the image file is in fact an image.
+  - `looks-same` - compare two
+
+
+## Logic
+
+Here's a working model of how the application will function (this model will evolve), at least how I think it might work.
+
+- Validate the command line arguments
+- Gather a complete list of all the images with their file paths in an array. Sort them into:
+  - { filepath: string, filename: string, isFolder: boolean }
+- Do some initial checks based on file similarities:
+  - Does a folder name share the same part of another folder name?
+  - Does a folder share the same part of another image file name?
+  - Does an image share the same contents of another image?
+
+- There will be an array which will be mutated throughout the course of the checks in order to .
+- Do I also want a huge matrix which has accounted for all possibilities?
