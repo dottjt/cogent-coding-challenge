@@ -20,13 +20,7 @@ In the root directory run:
 ## Running
 
 To run the application, please enter:
-  - `npm start` with relevant arguments
-
-<!-- Here are some examples:
   - `npm start`
-  - `npm start`
-  - `npm start`
-  - `npm start` -->
 
 To run the tests, please enter:
   - `npm test`
@@ -50,7 +44,8 @@ Here's how I went about this coding exercise.
 - Figure out which libraries I need to use + initial assumptions + application logic
   - `fs` - file
   - `file-type` - checks if the image file is in fact an image.
-  - `looks-same` - compare two
+  - `looks-same` - compare the contents of two different images.
+- Spec out how the application should be formatted.
 
 
 ## Logic
@@ -65,5 +60,5 @@ Here's a working model of how the application will function (this model will evo
   - Does a folder share the same part of another image file name?
   - Does an image share the same contents of another image?
 
-- There will be an array which will be mutated throughout the course of the checks in order to .
-- Do I also want a huge matrix which has accounted for all possibilities?
+- There will be an array which will be mutated throughout the course of the checks which items have already been iterated?
+- Do I also want a huge matrix which has accounted for all possibilities? Might be beyond the scope of this application.

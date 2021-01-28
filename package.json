@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/dottjt/cogent-take-home-test#readme",
   "dependencies": {
+    "image-type": "^4.1.0",
     "lodash": "^4.17.20",
+    "looks-same": "^7.2.4",
     "moment": "^2.29.1",
+    "read-chunk": "^3.2.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   },
