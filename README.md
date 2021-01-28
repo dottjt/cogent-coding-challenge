@@ -37,7 +37,7 @@ To run the tests, please enter:
 
 ## Future Improvements
 
--
+- It doesn't check if a folder has contents (let alone if they are images) before adding it to the file array, so you can add empty/irrelevant folders. With that said, the computational complexity of making those checks might outweigh the benefit in reducing the complexity of the final sort - but it depends entirely on the number of files.
 
 ## Process
 
@@ -49,6 +49,7 @@ Here's how I went about this coding exercise.
   - `file-type` - checks if the image file is in fact an image.
   - `looks-same` - compare the contents of two different images.
 - Spec out how the application should be formatted.
+- Write each section of the application with tests.
 
 
 ## Logic
@@ -62,7 +63,9 @@ Here's a working model of how the application will function (this model will evo
   - Does a folder name share the same part of another folder name?
   - Does a folder share the same part of another image file name?
   - Does an image share the same contents of another image?
+- Go through all the images and basically check them one by one.
 
+## Additional Notes
 
 - There will be an array which will be mutated throughout the course of the checks which items have already been iterated?
 - Do I also want a huge matrix which has accounted for all possibilities? Might be beyond the scope of this application.

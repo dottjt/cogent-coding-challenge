@@ -1,5 +1,10 @@
 export type File = {
-  filepath: string;
-  filename: string;
+  filePath: string;
+  fileName: string;
   isFolder: boolean;
+}
+
+export type ImageType = {
+  ext: string;
+  mime: string;
 }
