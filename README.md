@@ -4,7 +4,7 @@ Hello!
 
 My name is Julius. Thank you for looking into my code! I spent a few days building it and I hope you think it's awesome. :grin:
 
-I tried a few different approaches to varying success, but in the end the image comparison algorithm consistently proved to be the most significant bottleneck in terms of speed, so I focused on making all the images as simple as possible to parse and I'm very happy with the result. It's now blisteringly fast.
+I tried a few different approaches with varying success, but in the end the image comparison algorithm proved to be the most significant bottleneck in terms of speed, so I focused on optimising all the images so that it could run as smoothly as possible, and I'm very happy with the result. It's now blisteringly fast.
 
 I also tried my best to adopt an iterative TDD approach for most of the application, but the actual comparison algorithm proved too complex to attempt given the complexity/uncertainty of the solution (I ended up rewriting it a few times). I still wrote tests to prove that it worked, but TDD is definitely something I would like to improve upon.
 
@@ -13,81 +13,63 @@ I would also like to comment that this exercise is definitely not a 3 - 4 hour c
 ## Output
 
 ```
-Processing Images...
-Comparing Images...
-...aaaaaaand the results are in!
+  Processing Images...
+  Comparing Images...
+  ...aaaaaaand the results are in!
 
-These images are the same:
-- "castle from drone.jpg": "./images/Dec 2016/castle from drone.jpg"
-- "what is this?.jpg": "./images/germany/what is this?.jpg"
+  These images are the same:
+  - "castle from drone.jpg": "./images/Dec 2016/castle from drone.jpg"
+  - "what is this?.jpg": "./images/germany/what is this?.jpg"
 
-These images are the same:
-- "incredible.jpg": "./images/Dec 2016/incredible.jpg"
-- "is this real.jpg": "./images/germany/is this real.jpg"
+  These images are the same:
+  - "incredible.jpg": "./images/Dec 2016/incredible.jpg"
+  - "is this real.jpg": "./images/germany/is this real.jpg"
 
-These images are the same:
-- "mew.jpg": "./images/mew.jpg"
-- "mew.jpg": "./images/random cats I saw/mew.jpg"
+  These images are the same:
+  - "mew.jpg": "./images/mew.jpg"
+  - "mew.jpg": "./images/random cats I saw/mew.jpg"
 
-These images are the same:
-- "laptop does run pretty hot.jpg": "./images/random cats I saw/laptop does run pretty hot.jpg"
-- "cat.jpg": "./images/work/cat.jpg"
+  These images are the same:
+  - "laptop does run pretty hot.jpg": "./images/random cats I saw/laptop does run pretty hot.jpg"
+  - "cat.jpg": "./images/work/cat.jpg"
 
-These images are the same:
-- "coves.jpg": "./images/sea, sand, surf/coves.jpg"
-- "s-06927.jpg": "./images/trip to the sea/s-06927.jpg"
+  These images are the same:
+  - "coves.jpg": "./images/sea, sand, surf/coves.jpg"
+  - "s-06927.jpg": "./images/trip to the sea/s-06927.jpg"
 
-These images are the same:
-- "ilusion.jpg": "./images/sea, sand, surf/ilusion.jpg"
-- "s-23225.jpg": "./images/trip to the sea/s-23225.jpg"
+  These images are the same:
+  - "ilusion.jpg": "./images/sea, sand, surf/ilusion.jpg"
+  - "s-23225.jpg": "./images/trip to the sea/s-23225.jpg"
 
-These images are the same:
-- "low tide.jpg": "./images/sea, sand, surf/low tide.jpg"
-- "s-02979.jpg": "./images/trip to the sea/s-02979.jpg"
+  These images are the same:
+  - "low tide.jpg": "./images/sea, sand, surf/low tide.jpg"
+  - "s-02979.jpg": "./images/trip to the sea/s-02979.jpg"
 
-These images are the same:
-- "matin.jpg": "./images/sea, sand, surf/matin.jpg"
-- "s-08913.jpg": "./images/trip to the sea/s-08913.jpg"
+  These images are the same:
+  - "matin.jpg": "./images/sea, sand, surf/matin.jpg"
+  - "s-08913.jpg": "./images/trip to the sea/s-08913.jpg"
 
-These images are the same:
-- "quite a view.jpg": "./images/sea, sand, surf/quite a view.jpg"
-- "s-08369.jpg": "./images/trip to the sea/s-08369.jpg"
+  These images are the same:
+  - "quite a view.jpg": "./images/sea, sand, surf/quite a view.jpg"
+  - "s-08369.jpg": "./images/trip to the sea/s-08369.jpg"
 
-These images are the same:
-- "s-01324.jpg": "./images/sea, sand, surf/s-01324.jpg"
-- "turtle omg.jpg": "./images/sea, sand, surf/turtle omg.jpg"
-- "s-08712 (turtle).jpg": "./images/trip to the sea/s-08712 (turtle).jpg"
+  These images are the same:
+  - "s-01324.jpg": "./images/sea, sand, surf/s-01324.jpg"
+  - "turtle omg.jpg": "./images/sea, sand, surf/turtle omg.jpg"
+  - "s-08712 (turtle).jpg": "./images/trip to the sea/s-08712 (turtle).jpg"
 
-These images are the same:
-- "sunset.jpg": "./images/sea, sand, surf/sunset.jpg"
-- "s-02141.jpg": "./images/trip to the sea/s-02141.jpg"
+  These images are the same:
+  - "sunset.jpg": "./images/sea, sand, surf/sunset.jpg"
+  - "s-02141.jpg": "./images/trip to the sea/s-02141.jpg"
 
-These images are the same:
-- "that starfish again.jpg": "./images/sea, sand, surf/that starfish again.jpg"
-- "s-37293.jpg": "./images/trip to the sea/s-37293.jpg"
+  These images are the same:
+  - "that starfish again.jpg": "./images/sea, sand, surf/that starfish again.jpg"
+  - "s-37293.jpg": "./images/trip to the sea/s-37293.jpg"
 
-These images are the same:
-- "tree.jpg": "./images/sea, sand, surf/tree.jpg"
-- "s-08214.jpg": "./images/trip to the sea/s-08214.jpg"
+  These images are the same:
+  - "tree.jpg": "./images/sea, sand, surf/tree.jpg"
+  - "s-08214.jpg": "./images/trip to the sea/s-08214.jpg"
 ```
-
-## Considerations
-
-### What if this same solution was used on a really large set of photos? What if it was a thousand photos? Or tens of thousands?
-
-- The algorithm has been optimised around speed and allows for extremely fast comparison of images. It does a number of things to facilitate the process, such as standardise the images down to 30px x 30px, as well as apply greyscaling to the images.
-
-### What if this was a three-way merge, with triplicates? Does your solution account for this?
-
-- Yes, the solution runs a complete total of all images within the set.
-
-### Some of these files may have had their filename changed.
-
-- This is irrespective, because filename does not prove image contents, nor would this kind of check/optimisation improve upon finding all possible images which are the same.
-
-### Some of these may have only their extension changed.
-
-- This is irrespective, because extension does not prove image contents, nor would this kind of check/optimisation improve upon finding all possible images which are the same.
 
 ## Application
 
@@ -138,12 +120,30 @@ To run the tests, please enter:
 - The tests could be more comprehensive and better formatted.
 - The git commit messages really aren't that great.
 
+## Considerations
+
+### What if this same solution was used on a really large set of photos? What if it was a thousand photos? Or tens of thousands?
+
+- The algorithm has been optimised around speed and allows for extremely fast comparison of images. It does a number of things to facilitate the process, such as standardise the images down to 30px x 30px, as well as apply greyscaling to the images.
+
+### What if this was a three-way merge, with triplicates? Does your solution account for this?
+
+- Yes, the solution runs a complete total of all images within the set.
+
+### Some of these files may have had their filename changed.
+
+- This is irrespective, because filename does not prove image contents, nor would this kind of check/optimisation improve upon finding all possible images which are the same.
+
+### Some of these may have only their extension changed.
+
+- This is irrespective, because extension does not prove image contents, nor would this kind of check/optimisation improve upon finding all possible images which are the same.
+
 ## Process
 
 Here's how I went about this coding exercise.
 
 - Create initial codebase.
-- Figure out which libraries I need to use + initial assumptions + application logic
+- Figure out which libraries I need to use + initial assumptions + application logic.
   - `fs` - file
   - `file-type` - checks if the image file is in fact an image.
   - `looks-same` - compare the contents of two different images. (lol ended up going with pixelmatch instead because looks-same was too slow)
@@ -154,7 +154,7 @@ Here's how I went about this coding exercise.
 
 Here's a working model of how the application will function (this model will evolve), at least how I think it might work.
 
-- Validate the command line arguments
+- Validate the command line arguments.
 - Gather a complete list of all the images with their file paths in an array. Sort them into:
   - { filepath: string, filename: string, isFolder: boolean }
 - Do some initial checks based on file similarities:
