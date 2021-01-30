@@ -1,10 +1,10 @@
-# Cogent Take Home Test
+# Cogent Coding Challenge
 
 Hello!
 
 My name is Julius. Thank you for looking into my code! I spent a few days building it and I hope you think it's awesome. :grin:
 
-I tried a few different approaches with varying success, but in the end the image comparison algorithm proved to be the most significant bottleneck in terms of speed, so I focused on optimising all the images so that it could run as smoothly as possible, and I'm very happy with the result. It's now blisteringly fast.
+I tried a few different approaches with varying success, but in the end the image comparison algorithm proved to be the most significant bottleneck in terms of speed, so I focused on optimising all the images so that the algorithm could run as smoothly as possible, and I'm very happy with the result. It's now blisteringly fast.
 
 I also tried my best to adopt an iterative TDD approach for most of the application, but the actual comparison algorithm proved too complex to attempt given the complexity/uncertainty of the solution (I ended up rewriting it a few times). I still wrote tests to prove that it worked, but TDD is definitely something I would like to improve upon.
 
@@ -75,9 +75,9 @@ I would also like to comment that this exercise is definitely not a 3 - 4 hour c
 
 Here's the gist of how the application works.
 
-- Pass in folder of images for application to process.
+- Pass in folder of images for the application to process.
 - Process and crop all images into a `./tmp` folder (greyscale, 30px x 30px) so that they're all quick n' easy to compare.
-- Compare them pixel by pixel using a quick pixel matching library.
+- Compare the images pixel by pixel using a fast pixel matching library.
 - Display the results to the user.
 
 ## Structure
@@ -113,12 +113,12 @@ To run the tests, please enter:
 
 ## Future Improvements
 
-- It might be more useful to actually output the result in a JSON or something like that, in case they wanted to parse the data themselves.
+- It might be more useful to the user to actually output the result as a JSON or something like that, in case they wanted to parse the data themselves.
 - I'm sure you could go smaller than 30px (maybe that's actually too small?), but I have no idea what the threshold is to prove that two images are the same.
 - Technically you wouldn't have to create any actual images within a `./tmp` and you could just render the image information solely into a buffer, but I wanted to render it for testing reasons.
 - There's some legacy stuff in there like adding folders into the file array, because I thought I could use it for some optimisations - but I didn't really feel it was necessary in the end.
 - The tests could be more comprehensive and better formatted.
-- The git commit messages really aren't that great.
+- The git commit messages really aren't that great, and the commits themselves are far too large.
 
 ## Considerations
 

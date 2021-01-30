@@ -1,7 +1,7 @@
 {
-  "name": "cogent-take-home-test",
+  "name": "cogent-coding-challenge",
   "version": "1.0.0",
-  "description": "Cogent Take Home Test",
+  "description": "Cogent Coding Challenge",
   "main": "src/index.ts",
   "scripts": {
     "start:dev": "npx ts-node-dev ./src/index.ts --respawn --transpileOnly",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dottjt/cogent-take-home-test.git"
+    "url": "git+https://github.com/dottjt/cogent-coding-challenge.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dottjt/cogent-take-home-test/issues"
+    "url": "https://github.com/dottjt/cogent-coding-challenge/issues"
   },
-  "homepage": "https://github.com/dottjt/cogent-take-home-test#readme",
+  "homepage": "https://github.com/dottjt/cogent-coding-challenge#readme",
   "dependencies": {
     "@types/pngjs": "^3.4.2",
     "image-type": "^4.1.0",

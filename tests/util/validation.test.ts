@@ -17,8 +17,8 @@ describe('util/validation.ts', () => {
 
     it('should throw error if argumentArray does not contain exact amount of valid arguments', () => {
       const argumentArray = [
-        '/cogent-take-home-test/node_modules/.bin/ts-node',
-        '/cogent-take-home-test/src/index.ts',
+        '/cogent-coding-challenge/node_modules/.bin/ts-node',
+        '/cogent-coding-challenge/src/index.ts',
         './images',
         'hello stranger!'
       ];
@@ -33,8 +33,8 @@ describe('util/validation.ts', () => {
 
     it('should throw error if imageFolder Argument is not a valid folder', () => {
       const argumentArray = [
-        '/cogent-take-home-test/node_modules/.bin/ts-node',
-        '/cogent-take-home-test/src/index.ts',
+        '/cogent-coding-challenge/node_modules/.bin/ts-node',
+        '/cogent-coding-challenge/src/index.ts',
         './tests/main.test.ts'
       ];
 
@@ -48,8 +48,8 @@ describe('util/validation.ts', () => {
 
     it('should return valid folder path if arguments are formatted corrected', () => {
       const argumentArray = [
-        '/cogent-take-home-test/node_modules/.bin/ts-node',
-        '/cogent-take-home-test/src/index.ts',
+        '/cogent-coding-challenge/node_modules/.bin/ts-node',
+        '/cogent-coding-challenge/src/index.ts',
         './tests/images_test'
       ];
 

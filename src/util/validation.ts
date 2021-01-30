@@ -9,7 +9,7 @@ export const validateCommandlineArguments =
     }
 
     const imageFolderPath = argumentArray[2];
-    const isPathValidFolder = fs.existsSync(imageFolderPath) && fs.lstatSync(imageFolderPath).isDirectory()
+    const isPathValidFolder = fs.existsSync(imageFolderPath) && fs.lstatSync(imageFolderPath).isDirectory();
 
     if (!isPathValidFolder) {
       console.log('Please provide a valid folder directory to the application.');
