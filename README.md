@@ -4,7 +4,7 @@ Hello!
 
 My name is Julius. Thank you for looking into my code! I spent a few days building it and I hope you think it's awesome. :grin:
 
-I tried a few different approaches to varying success, but in the end the image comparison algorithm consistently proved to be the most significant bottleneck in terms of speed, so I focused on making all the images as simple as possible to parse and I'm very happy with the result. The application now runs very smoothly.
+I tried a few different approaches to varying success, but in the end the image comparison algorithm consistently proved to be the most significant bottleneck in terms of speed, so I focused on making all the images as simple as possible to parse and I'm very happy with the result. It's now blisteringly fast.
 
 I also tried my best to adopt an iterative TDD approach for most of the application, but the actual comparison algorithm proved too complex to attempt given the complexity/uncertainty of the solution (I ended up rewriting it a few times). I still wrote tests to prove that it worked, but TDD is definitely something I would like to improve upon.
 
@@ -13,8 +13,62 @@ I would also like to comment that this exercise is definitely not a 3 - 4 hour c
 ## Output
 
 ```
+Processing Images...
+Comparing Images...
+...aaaaaaand the results are in!
 
+These images are the same:
+- "castle from drone.jpg": "./images/Dec 2016/castle from drone.jpg"
+- "what is this?.jpg": "./images/germany/what is this?.jpg"
 
+These images are the same:
+- "incredible.jpg": "./images/Dec 2016/incredible.jpg"
+- "is this real.jpg": "./images/germany/is this real.jpg"
+
+These images are the same:
+- "mew.jpg": "./images/mew.jpg"
+- "mew.jpg": "./images/random cats I saw/mew.jpg"
+
+These images are the same:
+- "laptop does run pretty hot.jpg": "./images/random cats I saw/laptop does run pretty hot.jpg"
+- "cat.jpg": "./images/work/cat.jpg"
+
+These images are the same:
+- "coves.jpg": "./images/sea, sand, surf/coves.jpg"
+- "s-06927.jpg": "./images/trip to the sea/s-06927.jpg"
+
+These images are the same:
+- "ilusion.jpg": "./images/sea, sand, surf/ilusion.jpg"
+- "s-23225.jpg": "./images/trip to the sea/s-23225.jpg"
+
+These images are the same:
+- "low tide.jpg": "./images/sea, sand, surf/low tide.jpg"
+- "s-02979.jpg": "./images/trip to the sea/s-02979.jpg"
+
+These images are the same:
+- "matin.jpg": "./images/sea, sand, surf/matin.jpg"
+- "s-08913.jpg": "./images/trip to the sea/s-08913.jpg"
+
+These images are the same:
+- "quite a view.jpg": "./images/sea, sand, surf/quite a view.jpg"
+- "s-08369.jpg": "./images/trip to the sea/s-08369.jpg"
+
+These images are the same:
+- "s-01324.jpg": "./images/sea, sand, surf/s-01324.jpg"
+- "turtle omg.jpg": "./images/sea, sand, surf/turtle omg.jpg"
+- "s-08712 (turtle).jpg": "./images/trip to the sea/s-08712 (turtle).jpg"
+
+These images are the same:
+- "sunset.jpg": "./images/sea, sand, surf/sunset.jpg"
+- "s-02141.jpg": "./images/trip to the sea/s-02141.jpg"
+
+These images are the same:
+- "that starfish again.jpg": "./images/sea, sand, surf/that starfish again.jpg"
+- "s-37293.jpg": "./images/trip to the sea/s-37293.jpg"
+
+These images are the same:
+- "tree.jpg": "./images/sea, sand, surf/tree.jpg"
+- "s-08214.jpg": "./images/trip to the sea/s-08214.jpg"
 ```
 
 ## Considerations
@@ -77,10 +131,12 @@ To run the tests, please enter:
 
 ## Future Improvements
 
-- I'm sure you could go smaller than 30px (maybe it's actually too small?), but I have no idea what the threshold is to prove that two images are the same.
+- It might be more useful to actually output the result in a JSON or something like that, in case they wanted to parse the data themselves.
+- I'm sure you could go smaller than 30px (maybe that's actually too small?), but I have no idea what the threshold is to prove that two images are the same.
 - Technically you wouldn't have to create any actual images within a `./tmp` and you could just render the image information solely into a buffer, but I wanted to render it for testing reasons.
 - There's some legacy stuff in there like adding folders into the file array, because I thought I could use it for some optimisations - but I didn't really feel it was necessary in the end.
 - The tests could be more comprehensive and better formatted.
+- The git commit messages really aren't that great.
 
 ## Process
 

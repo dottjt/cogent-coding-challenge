@@ -16,5 +16,7 @@ export const main = async (argumentArray: string[]) => {
   const { similarImages } = await compareImageContents(imageFiles);
 
   // Step 4 - Print results
+  console.log('...aaaaaaand the results are in!\n');
+  printResults(similarImages);
   process.exit(0);
 }
